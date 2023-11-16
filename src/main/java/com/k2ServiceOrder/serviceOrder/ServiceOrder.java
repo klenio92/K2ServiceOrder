@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "serviceId")
 public class ServiceOrder {
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceId;
     private Long budgetId;
     private String costumerName;
@@ -28,10 +28,12 @@ public class ServiceOrder {
     private String note;
     private Integer price;
 
-    public ServiceOrder(ServiceOrderRequestDTO data){
+    public ServiceOrder(ServiceOrderRequestDTO data) {
         this.serviceId = data.serviceId();
         this.budgetId = data.budgetId();
         this.costumerName = data.costumerName();
+        this.costumerId = data.costumerId();
+        this.costumerEmail = data.costumerEmail();
         this.costumerAddress = data.costumerAddress();
         this.carType = data.carType();
         this.carPlate = data.carPlate();
