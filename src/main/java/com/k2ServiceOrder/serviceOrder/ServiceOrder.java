@@ -18,7 +18,7 @@ public class ServiceOrder {
     private Long serviceId;
     private Long budgetId;
     private String costumerName;
-    private Long costumerId;
+    private String costumerId;
     private String costumerEmail;
     private String costumerAddress;
     private String carType;

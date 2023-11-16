@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/serviceorder")
+@RequestMapping("/serviceorder")
 public class K2ServiceOrderController {
 
     @Autowired
     private ServiceOrderRepository repository;
 
-    //@CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping
-    public List<ServiceOrderResponseDTO> getAll(){
+    // @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/search")
+    public List<ServiceOrderResponseDTO> getAll() {
         List<ServiceOrderResponseDTO> ordersList = repository.findAll().stream().map(ServiceOrderResponseDTO::new).toList();
         return ordersList;
     }
 
     //@CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping (value = "build")
-    public void saveOrder(@RequestBody ServiceOrderRequestDTO data){
+    @PostMapping("/build")
+    public void saveOrder(@RequestBody ServiceOrderRequestDTO data) {
         ServiceOrder serviceOrderData = new ServiceOrder(data);
         repository.save(serviceOrderData);
     }
