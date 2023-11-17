@@ -14,6 +14,7 @@
             margin-left: 5%;
             margin-right: 5%;
             margin-top: 5%;
+            margin-bottom: 5%;
         }
     </style>
 </head>
@@ -85,7 +86,8 @@
 <script type="text/javascript">
 
     function buildServiceOrder() {
-        //** var serviceId = $("#serviceId").val(); **//
+        //window.location.href = 'serviceorder.html';
+        //** var serviceId = $("#serviceId").val();
         var budgetId = $("#budgetId").val();
         var costumerName = $("#costumerName").val();
         var costumerId = $("#costumerId").val();
@@ -97,6 +99,7 @@
         var techReport = $("#techReport").val();
         var note = $("#note").val();
         var price = $("#price").val();
+        var dateTime = $("#dateTime").val();
 
         $.ajax({
 
@@ -114,7 +117,8 @@
                 description: description,
                 techReport: techReport,
                 note: note,
-                price: price
+                price: price,
+                dateTime: dateTime
             }),
             contentType: "application/json; charset=utf-8",
             success: function (response) {

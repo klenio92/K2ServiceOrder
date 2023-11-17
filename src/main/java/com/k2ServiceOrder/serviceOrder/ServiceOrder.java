@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.OffsetDateTime;
+
 @Table(name = "serviceorder")
 @Entity(name = "serviceorder")
 @AllArgsConstructor
@@ -27,6 +29,7 @@ public class ServiceOrder {
     private String techReport;
     private String note;
     private Integer price;
+    //private OffsetDateTime dateTime;
 
     public ServiceOrder(ServiceOrderRequestDTO data) {
         this.serviceId = data.serviceId();
@@ -41,5 +44,6 @@ public class ServiceOrder {
         this.techReport = data.techReport();
         this.note = data.note();
         this.price = data.price();
+        //this.dateTime = data.dateTime();
     }
 }

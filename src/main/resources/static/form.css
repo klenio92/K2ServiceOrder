@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.form-control.only-bottom-border {
+    border: none;
+    border-radius: 0;
+    border-bottom: transparent;
+    background-color: transparent;
+    width: auto;
+}
+.input-group-text.only-background {
+    background-color: transparent;
+    border: none;
+}
+.input-with-bottom-border {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 135px;
+}
