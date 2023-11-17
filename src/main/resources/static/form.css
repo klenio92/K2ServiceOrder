@@ -18,3 +18,9 @@
     border-bottom: 1px solid black;
     width: 135px;
 }
+.background-image {
+    background-image: url('img/k2icon.jpg');
+    background-size: cover;
+    background-position: right;
+    padding: 50px;
+}

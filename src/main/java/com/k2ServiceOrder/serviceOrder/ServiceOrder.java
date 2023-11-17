@@ -1,10 +1,7 @@
 package com.k2ServiceOrder.serviceOrder;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.OffsetDateTime;
 
@@ -19,15 +16,22 @@ public class ServiceOrder {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceId;
     private Long budgetId;
+    //@NotBlank
     private String costumerName;
+    //@NotBlank
     private String costumerId;
+    //@NotBlank
+    private String costumerNumber; //zap
     private String costumerEmail;
     private String costumerAddress;
+    //@NotBlank
     private String carType;
+    //@NotBlank
     private String carPlate;
     private String description;
     private String techReport;
     private String note;
+    //@NotBlank
     private Integer price;
     //private OffsetDateTime dateTime;
 
@@ -36,6 +40,7 @@ public class ServiceOrder {
         this.budgetId = data.budgetId();
         this.costumerName = data.costumerName();
         this.costumerId = data.costumerId();
+        this.costumerNumber = data.costumerNumber();
         this.costumerEmail = data.costumerEmail();
         this.costumerAddress = data.costumerAddress();
         this.carType = data.carType();
