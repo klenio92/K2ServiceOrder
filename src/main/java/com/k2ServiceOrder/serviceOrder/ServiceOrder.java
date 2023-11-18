@@ -5,8 +5,8 @@ import lombok.*;
 
 import java.time.OffsetDateTime;
 
-@Table(name = "serviceorder")
-@Entity(name = "serviceorder")
+@Table
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -32,7 +32,7 @@ public class ServiceOrder {
     private String techReport;
     private String note;
     //@NotBlank
-    private Integer price;
+    private String price;
     //private OffsetDateTime dateTime;
 
     public ServiceOrder(ServiceOrderRequestDTO data) {

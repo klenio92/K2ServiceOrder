@@ -5,7 +5,7 @@ import java.time.OffsetDateTime;
 public record ServiceOrderResponseDTO(Long serviceId, Long budgetId, String costumerName, String costumerId,
                                       String costumerNumber, String costumerEmail, String costumerAddress,
                                       String carType, String carPlate, String description, String techReport,
-                                      String note, Integer price) //,OffsetDateTime dateTime)
+                                      String note, String price) //,OffsetDateTime dateTime)
 {
     public ServiceOrderResponseDTO(ServiceOrder serviceOrder) {
         this(serviceOrder.getServiceId(), serviceOrder.getBudgetId(), serviceOrder.getCostumerName(), serviceOrder.getCostumerId(), serviceOrder.getCostumerNumber(),
