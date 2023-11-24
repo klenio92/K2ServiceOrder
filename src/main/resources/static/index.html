@@ -1,138 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous">
-    <style type="text/css">
-        html {
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<style type="text/css">
+html {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+</style>
 </head>
-<h1> K2 Service Order Builder </h1>
+<h1>K2 Service Order Builder</h1>
 
-</br>
 <body>
 
-<form class="row g-3">
-    <div class="col-md-6" >
-        <label form="" class="form-label">Número da OS</label>
-        <input type="hidden" class="form-control" id="serviceId">
-    </div>
-    <div class="col-md-6">
-        <label form="" class="form-label">Número do Orçamento</label>
-        <input type="text" class="form-control" id="budgetId">
-    </div>
-    <div class="col-4">
-        <label form="" class="form-label"> Nome do Cliente</label>
-        <input type="text" class="form-control" id="costumerName">
-    </div>
-    <div class="col-4">
-        <label form="" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="costumerId">
-    </div>
-    <div class="col-4">
-        <label form="" class="form-label">Número para contato:</label>
-        <input type="text" class="form-control" id="costumerNumber">
-    </div>
-    <div class="col-4">
-        <label form="" class="form-label">Email</label>
-        <input type="text" class="form-control" id="costumerEmail">
-    </div>
-    <div class="col-md-6">
-        <label form="" class="form-label">Endereço</label>
-        <input type="text" class="form-control" id="costumerAddress">
-    </div>
-    <div class="col-md-4">
-        <label form="" class="form-label">Carro</label>
-        <input type="text" class="form-control" id="carType">
-    </div>
-    <div class="col-md-2">
-        <label form="" class="form-label">Placa</label>
-        <input type="text" class="form-control" id="carPlate">
-    </div>
-    <div class="input-group">
-        <span class="input-group-text">Descrição</span>
-        <textarea class="form-control" aria-label="With textarea" id="description"></textarea>
-    </div>
-    <div class="input-group">
-        <span class="input-group-text">Laudo Tecnico</span>
-        <textarea class="form-control" aria-label="With textarea" id="techReport"></textarea>
-    </div>
-    <div class="input-group">
-        <span class="input-group-text">OBS</span>
-        <textarea class="form-control" aria-label="With textarea" id="note"></textarea>
-    </div>
-    <div class="input-group">
-        <input type="number" placeholder="Valor em Reais" class="form-control" aria-label="Real" id="price">
-        <span class="input-group-text">R$</span>
-    </div>
-    <div class="col-12">
-        <button type="button" onclick="buildServiceOrder()" class="btn btn-primary">Gerar OS</button>
-    </div>
-</form>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+	<form class="row g-3">
+		<div class="col-md-6">
+			<label class="form-label">Número da OS</label> <input type="hidden"
+				class="form-control" id="serviceId">
+		</div>
+		<div class="col-md-6">
+			<label class="form-label">Número do Orçamento</label> <input
+				type="text" class="form-control" id="budgetId">
+		</div>
+		<div class="col-4">
+			<label class="form-label"> Nome do Cliente</label> <input type="text"
+				class="form-control" id="costumerName">
+		</div>
+		<div class="col-4">
+			<label class="form-label">CPF</label> <input type="text"
+				class="form-control" id="costumerId">
+		</div>
+		<div class="col-4">
+			<label class="form-label">Número para contato:</label> <input
+				type="text" class="form-control" id="costumerNumber">
+		</div>
+		<div class="col-4">
+			<label class="form-label">Email</label> <input type="text"
+				class="form-control" id="costumerEmail">
+		</div>
+		<div class="col-md-6">
+			<label class="form-label">Endereço</label> <input type="text"
+				class="form-control" id="costumerAddress">
+		</div>
+		<div class="col-md-4">
+			<label class="form-label">Carro</label> <input type="text"
+				class="form-control" id="carType">
+		</div>
+		<div class="col-md-2">
+			<label class="form-label">Placa</label> <input type="text"
+				class="form-control" id="carPlate">
+		</div>
+		<div class="input-group">
+			<span class="input-group-text">Descrição</span>
+			<textarea class="form-control" aria-label="With textarea"
+				id="description"></textarea>
+		</div>
+		<div class="input-group">
+			<span class="input-group-text">Laudo Tecnico</span>
+			<textarea class="form-control" aria-label="With textarea"
+				id="techReport"></textarea>
+		</div>
+		<div class="input-group">
+			<span class="input-group-text">OBS</span>
+			<textarea class="form-control" aria-label="With textarea" id="note"></textarea>
+		</div>
+		<div class="input-group">
+			<input type="number" placeholder="Valor em Reais"
+				class="form-control" aria-label="Real" id="price"> <span
+				class="input-group-text">R$</span>
+		</div>
+		<div class="col-12">
+			<button type="button" onclick="saveServiceOrder()"
+				class="btn btn-primary">Salvar OS</button>
+		</div>
+		<div class="col-12">
+			<button type="button" onclick="buildJasperReport()"
+				class="btn btn-primary">Mostrar Relatório</button>
+		</div>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
+		function saveServiceOrder() {
+			//window.location.href = 'serviceorder.html';
+			//** var serviceId = $("#serviceId").val();
+			var budgetId = $("#budgetId").val();
+			var costumerName = $("#costumerName").val();
+			var costumerId = $("#costumerId").val();
+			var costumerEmail = $("#costumerEmail").val();
+			var costumerAddress = $("#costumerAddress").val();
+			var carType = $("#carType").val();
+			var carPlate = $("#carPlate").val();
+			var description = $("#description").val();
+			var techReport = $("#techReport").val();
+			var note = $("#note").val();
+			var price = $("#price").val();
+			//var dateTime = $("#dateTime").val();
 
-    function buildServiceOrder() {
-        //window.location.href = 'serviceorder.html';
-        //** var serviceId = $("#serviceId").val();
-        var budgetId = $("#budgetId").val();
-        var costumerName = $("#costumerName").val();
-        var costumerId = $("#costumerId").val();
-        var costumerEmail = $("#costumerEmail").val();
-        var costumerAddress = $("#costumerAddress").val();
-        var carType = $("#carType").val();
-        var carPlate = $("#carPlate").val();
-        var description = $("#description").val();
-        var techReport = $("#techReport").val();
-        var note = $("#note").val();
-        var price = $("#price").val();
-        var dateTime = $("#dateTime").val();
+			$.ajax({
 
-        $.ajax({
+				method : "POST",
+				url : "serviceorder/save",
+				data : JSON.stringify({
+					//serviceId : serviceId,//
+					budgetId : budgetId,
+					costumerName : costumerName,
+					costumerId : costumerId,
+					costumerEmail : costumerEmail,
+					costumerAddress : costumerAddress,
+					carType : carType,
+					carPlate : carPlate,
+					description : description,
+					techReport : techReport,
+					note : note,
+					price : price,
+				}),
+				contentType : "application/json; charset=utf-8",
+				success : function(response) {
+					// $("#serviceId").val(response.serviceId);//
+					alert("OS criada com sucesso!");
+				}
+			}).fail(function(xhr, status, errorThrown) {
+				alert("Erro ao criar OS!" + xhr.responseText);
+			});
+		}
 
-            method: "POST",
-            url: "serviceorder/build",
-            data: JSON.stringify({
-                //serviceId : serviceId,//
-                budgetId: budgetId,
-                costumerName: costumerName,
-                costumerId: costumerId,
-                costumerEmail: costumerEmail,
-                costumerAddress: costumerAddress,
-                carType: carType,
-                carPlate: carPlate,
-                description: description,
-                techReport: techReport,
-                note: note,
-                price: price,
-                dateTime: dateTime
-            }),
-            contentType: "application/json; charset=utf-8",
-            success: function (response) {
-                // $("#serviceId").val(response.serviceId);//
-                alert("OS criada com sucesso!");
-            }
-        }).fail(function (xhr, status, errorThrown) {
-            alert("Erro ao criar OS!" + xhr.responseText);
-        });
-    }
-</script>
+		function buildJasperReport() {
+			$.ajax({
+
+				method : "GET",
+				url : "serviceorder/build",
+				success : function(response) {
+					// $("#serviceId").val(response.serviceId);//
+					window.location.href = "/serviceorder/build";
+				}
+			}).fail(function(xhr, status, errorThrown) {
+				alert("Erro ao criar OS!" + xhr.responseText);
+			});
+		}
+	</script>
 </body>
 </html>
