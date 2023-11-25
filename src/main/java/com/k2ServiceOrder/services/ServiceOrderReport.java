@@ -28,7 +28,7 @@ public class ServiceOrderReport implements Serializable {
 		Connection connection = jdbcTemplate.getDataSource().getConnection(); // conexao com o banco
 
 		String jasperPath = servletContext
-				.getRealPath("/k2report.jasper") + File.separator + reportName + ".jasper";
+				.getRealPath("k2report.jasper") + File.separator + reportName + ".jasper";
 		// package reports
 
 		JasperPrint print = JasperFillManager.fillReport(jasperPath, new HashMap<>(), connection);
