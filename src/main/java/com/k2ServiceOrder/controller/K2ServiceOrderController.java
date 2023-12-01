@@ -33,11 +33,11 @@ public class K2ServiceOrderController {
 	@Autowired
 	private ServiceOrderRepository repository;
 
-	@Autowired
-	private ServiceOrderReport serviceOrderReport;
+	//@Autowired
+	//private ServiceOrderReport serviceOrderReport;
 
-	@Autowired
-	private ReportService reportService;
+	//@Autowired
+	//private ReportService reportService;
 
 	@Autowired
 	private ReportService2 reportService2;
@@ -48,22 +48,22 @@ public class K2ServiceOrderController {
 		return reportService2.exportReport(format);
 	}
 
-	@GetMapping(value = "/generate", produces = MediaType.APPLICATION_PDF_VALUE)
-	public ResponseEntity<byte[]> generatePdfReport() {
-		try {
-			JasperPrint jasperPrint = reportService.generateReport();
+	// @GetMapping(value = "/generate", produces = MediaType.APPLICATION_PDF_VALUE)
+	// public ResponseEntity<byte[]> generatePdfReport() {
+	// try {
+	// JasperPrint jasperPrint = reportService.generateReport();
+	//
+	// byte[] pdfReport = JasperExportManager.exportReportToPdf(jasperPrint);
 
-			byte[] pdfReport = JasperExportManager.exportReportToPdf(jasperPrint);
+	// HttpHeaders headers = new HttpHeaders();
+	// headers.setContentType(MediaType.APPLICATION_PDF);
+	// headers.setContentDispositionFormData("attachment", "k2report.pdf");
 
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_PDF);
-			headers.setContentDispositionFormData("attachment", "k2report.pdf");
-
-			return ResponseEntity.ok().headers(headers).body(pdfReport);
-		} catch (JRException e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
-	}
+	// return ResponseEntity.ok().headers(headers).body(pdfReport);
+	// } catch (JRException e) {
+	// return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	// }
+	// }
 
 	// @GetMapping("/getMaxServiceId")
 	// public ResponseEntity<Long> getMaxServiceId() {
@@ -76,26 +76,17 @@ public class K2ServiceOrderController {
 	// }
 
 	// @CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping(value = "/build", produces = "application/text")
-	public ResponseEntity<String> buildOrder(HttpServletRequest request) throws Exception {
-		byte[] pdf = serviceOrderReport.buildReport("k2report", request.getServletContext());
-
-		String pdfReport = "data:application/pdf;base64," + Base64.encodeBase64String(pdf);
-
-		return new ResponseEntity<String>(pdfReport, HttpStatus.OK);
-	}
-
-	@GetMapping("/maxServiceOrder")
-	public ResponseEntity<ServiceOrder> getMaxServiceOrder() {
-		Long maxServiceId = repository.findMaxServiceId();
-		if (maxServiceId != null) {
-			Optional<ServiceOrder> maxServiceOrder = repository.findById(maxServiceId);
-			if (maxServiceOrder.isPresent()) {
-				return ResponseEntity.ok(maxServiceOrder.get());
-			}
-		}
-		return ResponseEntity.notFound().build();
-	}
+	// @GetMapping(value = "/build", produces = "application/text")
+	// public ResponseEntity<String> buildOrder(HttpServletRequest request) throws
+	// Exception {
+	// byte[] pdf = serviceOrderReport.buildReport("k2report",
+	// request.getServletContext());
+	//
+	// String pdfReport = "data:application/pdf;base64," +
+	// Base64.encodeBase64String(pdf);
+	//
+	// return new ResponseEntity<String>(pdfReport, HttpStatus.OK);
+	// }
 
 	// @CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/save")

@@ -33,49 +33,49 @@
 	<queryString language="SQL">
 		<![CDATA[SELECT *
 FROM service_order
-WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
+WHERE serviceId = (SELECT MAX(serviceId) FROM service_order)]]>
 	</queryString>
-	<field name="service_id" class="java.lang.Long">
+	<field name="serviceId" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.name" value="service_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="service_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="budget_id" class="java.lang.Long">
+	<field name="budgetId" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.name" value="budget_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="budget_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="car_plate" class="java.lang.String">
+	<field name="carPlate" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="car_plate"/>
 		<property name="com.jaspersoft.studio.field.label" value="car_plate"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="car_type" class="java.lang.String">
+	<field name="carType" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="car_type"/>
 		<property name="com.jaspersoft.studio.field.label" value="car_type"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="costumer_address" class="java.lang.String">
+	<field name="costumerAddress" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="costumer_address"/>
 		<property name="com.jaspersoft.studio.field.label" value="costumer_address"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="costumer_email" class="java.lang.String">
+	<field name="costumerEmail" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="costumer_email"/>
 		<property name="com.jaspersoft.studio.field.label" value="costumer_email"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="costumer_id" class="java.lang.String">
+	<field name="costumerId" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="costumer_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="costumer_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="costumer_name" class="java.lang.String">
+	<field name="costumerName" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="costumer_name"/>
 		<property name="com.jaspersoft.studio.field.label" value="costumer_name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="costumer_number" class="java.lang.String">
+	<field name="costumerNumber" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="costumer_number"/>
 		<property name="com.jaspersoft.studio.field.label" value="costumer_number"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
@@ -95,7 +95,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 		<property name="com.jaspersoft.studio.field.label" value="price"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
 	</field>
-	<field name="tech_report" class="java.lang.String">
+	<field name="techReport" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="tech_report"/>
 		<property name="com.jaspersoft.studio.field.label" value="tech_report"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="service_order"/>
@@ -104,12 +104,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="58" splitType="Stretch">
-			<image>
-				<reportElement x="169" y="0" width="224" height="57" uuid="833c05a5-95cb-4713-9be8-a13e8320d6a2"/>
-				<imageExpression><![CDATA["/src/main/resources/img/k2icon02.jpg"]]></imageExpression>
-			</image>
-		</band>
+		<band height="58" splitType="Stretch"/>
 	</title>
 	<pageHeader>
 		<band height="744" splitType="Stretch">
@@ -174,7 +169,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{tech_report}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{techReport}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="365" y="0" width="79" height="17" uuid="cb3ad196-dcec-413e-b533-b8d0c8ddd52e">
@@ -184,7 +179,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{budget_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{budgetId}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="39" y="205" width="320" height="34" uuid="4ef51c7a-f6c3-4496-a2f3-995c9820770b">
@@ -206,7 +201,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{car_plate}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{carPlate}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="68" width="150" height="17" uuid="09d7fe52-31b8-4a38-9bdf-e7a630ce8f9f">
@@ -216,7 +211,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{car_type}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{carType}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="74" y="50" width="274" height="17" uuid="a4636441-0b0f-4223-883c-76c94d72700e">
@@ -227,7 +222,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_address}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerAddress}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="260" y="34" width="223" height="17" uuid="feddb4e4-813c-4373-a724-00f6c997bbf5">
@@ -237,7 +232,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_email}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerEmail}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="245" y="17" width="99" height="17" uuid="43ebafee-eef8-4f85-b162-fdc91a12d8af">
@@ -248,7 +243,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerId}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="17" width="150" height="17" uuid="6601f2f8-52b4-4403-bce9-09fc17446cf2">
@@ -258,7 +253,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="60" y="34" width="94" height="17" uuid="2fad1dd8-f2a1-48d9-b238-0687f6533ca6">
@@ -269,7 +264,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_number}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="130" y="0" width="70" height="17" uuid="b8a07aa4-599e-44e4-af70-2ff064f1e9ce">
@@ -278,7 +273,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{service_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{serviceId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="17" width="50" height="17" uuid="1bd0e423-3a6d-4e6e-a022-e8c8de8d1fbb">
@@ -503,7 +498,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{tech_report}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{techReport}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="365" y="445" width="79" height="17" uuid="38beacb1-b968-451f-b93c-f6f24c273f1e">
@@ -513,7 +508,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{budget_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{budgetId}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="260" y="513" width="88" height="17" uuid="4bd3ef99-5354-4d1b-ac55-2b77ee3f6d59">
@@ -524,7 +519,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{car_plate}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{carPlate}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="513" width="150" height="17" uuid="1013155b-110b-4380-a59f-b32209be3bf9">
@@ -534,7 +529,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{car_type}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{carType}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="74" y="495" width="274" height="17" uuid="b09b9f8b-8d9b-4b61-9133-9aa41bd2995e">
@@ -545,7 +540,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_address}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerAddress}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="260" y="479" width="223" height="17" uuid="f781f8d7-c3d3-41f7-93b6-7660613b7e95">
@@ -555,7 +550,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_email}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerEmail}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="245" y="462" width="99" height="17" uuid="b77b3f45-75c6-4afc-b67e-88891431ce45">
@@ -566,7 +561,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerId}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="462" width="150" height="17" uuid="2531ed6c-7438-456e-831d-96abcc493eaf">
@@ -576,7 +571,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="60" y="479" width="94" height="17" uuid="d3bbb8db-8c6a-472d-8244-802d71dbc956">
@@ -587,7 +582,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{costumer_number}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{costumerNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="130" y="445" width="70" height="17" uuid="2583869d-330c-451d-8592-dd0a89db1e7a">
@@ -596,7 +591,7 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				<textElement verticalAlignment="Top">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{service_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{serviceId}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="462" width="50" height="17" uuid="9868ec7e-5e57-4bf6-9c9c-53fa7360a482">
@@ -745,10 +740,6 @@ WHERE service_id = (SELECT MAX(service_id) FROM service_order)]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="166" y="350" width="230" height="70" uuid="7e4c8637-dc88-47ef-ab82-0afd9815f13b"/>
-				<imageExpression><![CDATA["/src/main/resources/img/k2icon02.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="0" y="242" width="559" height="58" uuid="c0b49df2-c52a-4c07-b2a1-cb1e77dd7a38"/>
 				<textElement>
